@@ -1,7 +1,7 @@
 {
-  "name": "@wooportal/client",
-  "description": "client for wooportal - conventional event mapping",
-  "homepage": "https://wooportal.app",
+  "name": "jugendkompass",
+  "description": "An informative portal for Dinslakens youth",
+  "homepage": "https://jugendkompass.wooportal.app",
   "version": "0.2.3",
   "author": {
     "name": "codeschluss",
@@ -10,11 +10,11 @@
   },
   "bugs": {
     "email": "info@codeschluss.de",
-    "url": "https://github.com/wooportal/client/issues"
+    "url": "https://github.com/codeschluss/jugendkompass/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wooportal/client"
+    "url": "https://github.com/codeschluss/jugendkompass"
   },
   "browserdlist": [
     "last 5 Chrome version",

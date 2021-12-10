@@ -6,7 +6,7 @@
     <string>AIzaSyDhugSPmI27zUIr8inLx1XYzHv40sSaz_Q</string>
 
     <key>BUNDLE_ID</key>
-    <string>de.codeschluss.wooportal.client</string>
+    <string>de.codeschluss.jugendkompass</string>
 
     <key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
     <true/>

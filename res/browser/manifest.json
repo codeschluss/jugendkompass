@@ -1,7 +1,7 @@
 {
-  "short_name": "wooportal",
-  "name": "@wooportal/client",
-  "description": "client for wooportal - conventional event mapping",
+  "short_name": "Jugendkompass",
+  "name": "Jugendkompass",
+  "description": "An informative portal for Dinslakens youth",
 
   "scope": "/",
   "start_url": "/",

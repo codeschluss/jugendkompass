@@ -1,3 +1,3 @@
-# @wooportal/client
+# Jugendkompass
 
-client for wooportal - conventional event mapping
+An informative portal for Dinslakens youth

@@ -5,13 +5,13 @@
     "refreshUrl": "/api/refresh"
   },
   "app": {
-    "baseUrl": "https://wooportal.app",
+    "baseUrl": "https://jugendkompass.wooportal.app",
     "profile": "production"
   },
   "defaults": {
-    "city": "",
-    "language": "en",
-    "title": "wooportal"
+    "city": "Dinslaken",
+    "language": "de",
+    "title": "Jugendkompass"
   },
   "jwtClaims": {
     "activityProvider": "createdActivities",
@@ -28,7 +28,7 @@
     "write": "content-language"
   },
   "storeIds": {
-    "android": "de.codeschluss.wooportal.client",
+    "android": "de.codeschluss.jugendkompass",
     "ios": "1234567890"
   }
 }

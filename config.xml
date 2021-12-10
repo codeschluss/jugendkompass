@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets"
   xmlns:cdv="http://cordova.apache.org/ns/1.0"
-  id="de.codeschluss.wooportal.client"
+  id="de.codeschluss.jugendkompass"
   android-versionCode="0230"
   ios-CFBundleVersion="0.2.3.0"
   version="0.2.3">
@@ -12,13 +12,13 @@
     Codeschluss GbR
   </author>
   <name>
-    wooportal.client
+    Jugendkompass
   </name>
   <description>
-    client for wooportal - conventional event mapping
+    An informative portal for Dinslakens youth
   </description>
 
-  <access origin="*"/>
+  <access origin="https://jugendkompass.wooportal.app"/>
   <access origin="https://*.tile.openstreetmap.org"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>

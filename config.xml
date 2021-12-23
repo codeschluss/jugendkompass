@@ -2,9 +2,9 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
   xmlns:cdv="http://cordova.apache.org/ns/1.0"
   id="de.codeschluss.jugendkompass"
-  android-versionCode="0230"
-  ios-CFBundleVersion="0.2.3.0"
-  version="0.2.3">
+  android-versionCode="0240"
+  ios-CFBundleVersion="0.2.4.0"
+  version="0.2.4">
 
   <author
     email="info@codeschluss.de"
@@ -24,11 +24,13 @@
   <allow-intent href="https://*/*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="tel:*"/>
+  <content src="index.html"/>
 
   <preference name="Orientation" value="portrait"/>
   <preference name="AutoHideSplashScreen" value="false"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <preference name="SplashMaintainAspectRatio" value="true"/>
+  <preference name="AndroidInsecureFileModeEnabled" value="true"/>
 
   <platform name="browser">
     <preference name="AutoHideSplashScreen" value="true"/>

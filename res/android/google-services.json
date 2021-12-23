@@ -1,21 +1,21 @@
 {
   "configuration_version": "1",
   "project_info": {
-    "project_id": "wooportal-e80d8",
-    "project_number": "83837424328"
+    "project_id": "jugendkompass-id",
+    "project_number": "13000676024"
   },
   "client": [
     {
       "api_key": [
         {
-          "current_key": "AIzaSyCe04PVju7h8U8lxUHXAkd1izSreW5ggOE"
+          "current_key": "AIzaSyC4uU6tV8o-6qob_yBISAxAr-E8VqEFb5M"
         }
       ],
       "client_info": {
         "android_client_info": {
           "package_name": "de.codeschluss.jugendkompass"
         },
-        "mobilesdk_app_id": "1:83837424328:android:29b2134bc5a0a1c9f64bfd"
+        "mobilesdk_app_id": "1:13000676024:android:3af79096da73b8344ada4d"
       }
     }
   ]

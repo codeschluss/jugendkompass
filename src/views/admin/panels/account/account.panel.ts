@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { filter } from 'rxjs/operators';
-import { ActivityModel, BlogpostModel, CrudJoiner, OrganisationModel, UserModel } from '../../../../core';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { ActivityModel, BlogpostModel, CrudJoiner, ImageModel, OrganisationModel, UserModel } from '../../../../core';
 import { BasePanel } from '../../base/base.panel';
 import { RequestPopupComponent } from '../../popups/request.popup';
 
@@ -22,6 +23,7 @@ export class AccountPanelComponent
     }).with('activities').yield('address').yield('suburb')
       .with('activities').yield('category')
       .with('activities').yield('provider').yield('organisation')
+      .with('avatar')
       .with('blogger')
       .with('blogs').yield('activity')
       .with('organisations').yield('address').yield('suburb')
@@ -30,6 +32,10 @@ export class AccountPanelComponent
 
   public get activities(): ActivityModel[] {
     return this.user.activities || [];
+  }
+
+  public get avatar(): ImageModel {
+    return this.user.avatar;
   }
 
   public get approved(): boolean {
@@ -66,6 +72,36 @@ export class AccountPanelComponent
     this.dialog.open(RequestPopupComponent, {
       data: this.user
     }).afterClosed().pipe(filter(Boolean)).subscribe(() => this.reload());
+  }
+
+  public activityVisits(id: string): Observable<number> {
+    return this.activityServiceProvider.analyticsVisitsOne(id)
+      .pipe(map(response => response.body as number));
+  }
+
+  public activityVisitors(id: string): Observable<number> {
+    return this.activityServiceProvider.analyticsVisitorsOne(id)
+      .pipe(map(response => response.body as number));
+  }
+
+  public blogVisits(id: string): Observable<number> {
+    return this.blogpostProvider.analyticsVisitsOne(id)
+      .pipe(map(response => response.body as number));
+  }
+
+  public blogVisitors(id: string): Observable<number> {
+    return this.blogpostProvider.analyticsVisitorsOne(id)
+      .pipe(map(response => response.body as number));
+  }
+
+  public orgaVisits(id: string): Observable<number> {
+    return this.organisationProvider.analyticsVisitsOne(id)
+      .pipe(map(response => response.body as number));
+  }
+
+  public orgaVisitors(id: string): Observable<number> {
+    return this.organisationProvider.analyticsVisitorsOne(id)
+      .pipe(map(response => response.body as number));
   }
 
 }

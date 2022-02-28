@@ -32,6 +32,11 @@ export class OrganisationProvider
       model: AddressModel
     },
     {
+      field: 'avatar',
+      method: this.service.organisationControllerReadAvatarResponse,
+      model: ImageModel
+    },
+    {
       field: 'images',
       method: this.service.organisationControllerReadImagesResponse,
       model: ImageModel
@@ -100,6 +105,22 @@ export class OrganisationProvider
   public readAll: (params?: Service.OrganisationControllerReadAllParams) =>
     Observable<Model[]>;
 
+  public analyticsVisitorsAll: () =>
+    Observable<any> = this.apply(this.service
+      .organisationControllerCalculateOverviewVisitorsResponse);
+
+  public analyticsVisitorsOne: (id: string) =>
+    Observable<any> = this.apply(this.service
+      .organisationControllerCalculateVisitorsResponse);
+
+  public analyticsVisitsAll: () =>
+    Observable<any> = this.apply(this.service
+      .organisationControllerCalculateOverviewVisitsResponse);
+
+  public analyticsVisitsOne: (id: string) =>
+    Observable<any> = this.apply(this.service
+      .organisationControllerCalculateVisitsResponse);
+
   public grantMembership: (id: string, userId: string, grant: Boolean) =>
     Observable<any> = this.apply(this.service
       .organisationControllerApproveOrRejectUserResponse);
@@ -115,6 +136,10 @@ export class OrganisationProvider
   public like: (id: string, subscriptionId?: String) =>
     Observable<any> = this.apply(this.service
       .organisationControllerIncreaseLikeResponse);
+
+  public pasteImage: (id: string, image: ImageModel | null) =>
+    Observable<any> = this.apply(this.service
+      .organisationControllerAddAvatarResponse);
 
   public pasteImages: (id: string, images: ImageModel[]) =>
     Observable<any> = this.apply(this.service

@@ -15,7 +15,7 @@ import { SelectFieldComponent } from '../fields/select.field';
         <i18n>compilation</i18n>
       </label>
       <nav>
-        <button mat-button color="warn" (click)="clear()">
+        <button mat-stroked-button color="warn" (click)="clear()">
           <i18n>deleteAll</i18n>
         </button>
       </nav>
@@ -158,7 +158,7 @@ export class TranslationFormComponent<Model extends CrudModel>
   private empty(language: LanguageModel): Model {
     return (this.model as any).translatable
       .reduce((item, t) => Object.assign(item, { [t]: null }),
-        Object.assign(new this.model(), { language }));
+        new this.model({ language }));
   }
 
   private translation(language: LanguageModel): Model {

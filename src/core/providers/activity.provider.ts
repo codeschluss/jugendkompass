@@ -5,10 +5,8 @@ import { ActivityControllerService as Service } from '../../api/services/activit
 import { CrudLink, CrudMethods, CrudProvider } from '../crud/crud.provider';
 import { ActivityModel as Model } from '../models/activity.model';
 import { AddressModel } from '../models/address.model';
-import { BlogpostModel } from '../models/blogpost.model';
 import { CategoryModel } from '../models/category.model';
 import { ImageModel } from '../models/image.model';
-import { KeywordModel } from '../models/keyword.model';
 import { LanguageModel } from '../models/language.model';
 import { MembershipModel } from '../models/membership.model';
 import { OrganisationModel } from '../models/organisation.model';
@@ -27,11 +25,6 @@ export class ActivityProvider
       field: 'address',
       method: this.service.activityControllerReadAddressResponse,
       model: AddressModel
-    },
-    {
-      field: 'blogs',
-      method: this.service.activityControllerReadBlogsResponse,
-      model: BlogpostModel
     },
     {
       field: 'category',
@@ -64,14 +57,14 @@ export class ActivityProvider
       model: ScheduleModel
     },
     {
-      field: 'tags',
-      method: this.service.activityControllerReadTagsResponse,
-      model: KeywordModel
-    },
-    {
       field: 'targetGroups',
       method: this.service.activityControllerReadTargetGroupsResponse,
       model: TargetGroupModel
+    },
+    {
+      field: 'titleImage',
+      method: this.service.activityControllerReadTitleImageResponse,
+      model: ImageModel
     },
     {
       field: 'translatables',
@@ -112,6 +105,42 @@ export class ActivityProvider
   public readAll: (params?: Service.ActivityControllerReadAllParams) =>
     Observable<Model[]>;
 
+  public analyticsPerCategory: (current: boolean) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateActivitiesPerCategoryResponse);
+
+  public analyticsPerSuburb: (current: boolean) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateActivitiesPerSuburbsResponse);
+
+  public analyticsPerTargetGroup: (current: boolean) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateActivitiesPerTargetGroupResponse);
+
+  public analyticsVisitorsAll: () =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateOverviewVisitorsResponse);
+
+  public analyticsVisitorsOne: (id: string) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateVisitorsResponse);
+
+  public analyticsVisitsAll: () =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateOverviewVisitsResponse);
+
+  public analyticsVisitsOne: (id: string) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerCalculateVisitsResponse);
+
+  public icalAll: (id: string) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerGenerateIcalResponse);
+
+  public icalOne: (id: string, scheduleId?: string) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerGenerateIcalResponse);
+
   public like: (id: string, subscriptionId?: String) =>
     Observable<any> = this.apply(this.service
       .activityControllerIncreaseLikeResponse);
@@ -120,13 +149,13 @@ export class ActivityProvider
     Observable<any> = this.apply(this.service
       .activityControllerAddTargetGroupsResponse);
 
+  public pasteImage: (id: string, image: ImageModel | null) =>
+    Observable<any> = this.apply(this.service
+      .activityControllerAddTitleImageResponse);
+
   public pasteImages: (id: string, images: ImageModel[]) =>
     Observable<any> = this.apply(this.service
       .activityControllerAddImageResponse);
-
-  public pasteKeywords: (id: string, tags: KeywordModel[]) =>
-    Observable<any> = this.apply(this.service
-      .activityControllerAddTagsResponse);
 
   public pasteSchedules: (id: string, schedules: ScheduleModel[]) =>
     Observable<any> = this.apply(this.service
@@ -147,10 +176,6 @@ export class ActivityProvider
   public unlinkImages: (id: string, imageIds: string[]) =>
     Observable<any> = this.apply(this.service
       .activityControllerDeleteImagesResponse);
-
-  public unlinkKeywords: (id: string, tagIds: string[]) =>
-    Observable<any> = this.apply(this.service
-      .activityControllerDeleteTagsResponse);
 
   public unlinkSchedules: (id: string, scheduleId: string[]) =>
     Observable<any> = this.apply(this.service

@@ -3,11 +3,14 @@ import { NgModule, Type } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatSelectModule } from '@angular/material/select';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LabelModule } from '../../core';
 import { PartsModule } from '../parts/module';
@@ -18,10 +21,11 @@ import { EventsComponent } from './events/events.component';
 import { EventsListingComponent } from './events/events.listing';
 import { FavoritesListingComponent } from './favorites/favorites.listing';
 import { IndexComponent } from './index/index.component';
-import { MapComponent } from './map/map.component';
 import { PlaceComponent } from './place/place.component';
 import { PortalComponent } from './portal.component';
 import { PortalRouter } from './portal.router';
+import { RegisterPageComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { StaticPageComponent } from './static-page/static-page.component';
 import { StoryComponent } from './story/story.component';
@@ -34,9 +38,10 @@ const components: Type<any>[] = [
   EventsListingComponent,
   FavoritesListingComponent,
   IndexComponent,
-  MapComponent,
   PlaceComponent,
   PortalComponent,
+  RegisterPageComponent,
+  SearchComponent,
   SitemapComponent,
   StaticPageComponent,
   StoryComponent
@@ -47,11 +52,14 @@ const materials: Type<any>[] = [
   LabelModule,
   MatButtonModule,
   MatCardModule,
+  MatCheckboxModule,
   MatDatepickerModule,
+  MatDividerModule,
   MatFormFieldModule,
   MatListModule,
+  MatIconModule,
+  MatInputModule,
   MatMenuModule,
-  MatSelectModule,
   PartsModule,
   ReactiveFormsModule
 ];

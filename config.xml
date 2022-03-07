@@ -18,7 +18,7 @@
     An informative portal for Dinslakens youth
   </description>
 
-  <access origin="https://jugendkompass.wooportal.app"/>
+  <access origin="https://jugendkompass-din.de"/>
   <access origin="https://*.tile.openstreetmap.org"/>
   <access origin="https://vimeo.com/api/v2/video/"/>
   <access origin="https://i.vimeocdn.com/video/"/>

@@ -5,7 +5,7 @@
     "refreshUrl": "/api/refresh"
   },
   "app": {
-    "baseUrl": "https://jugendkompass.wooportal.app",
+    "baseUrl": "https://jugendkompass-din.de",
     "profile": "production"
   },
   "defaults": {

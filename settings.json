@@ -5,7 +5,7 @@
     "refreshUrl": "/api/refresh"
   },
   "app": {
-    "baseUrl": "https://jugendkompass-din.de",
+    "baseUrl": "https://www.jugendkompass-din.de",
     "profile": "production"
   },
   "defaults": {

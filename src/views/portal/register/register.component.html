@@ -26,6 +26,9 @@
             type="password"
             [formControl]="passwordConfirm">
         </mat-form-field>
+        <mat-slide-toggle [(ngModel)]="becomeBlogger">
+          <i18n>becomeBlogger</i18n>
+        </mat-slide-toggle>
       </mat-card-content>
       <mat-card-actions>
         <button mat-stroked-button

@@ -14,6 +14,8 @@ export class RegisterPageComponent
   extends RoutingComponent
   implements AfterViewInit {
 
+  public becomeBlogger = false;
+
   public email: FormControl = new FormControl(null, [
     Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
     Validators.required
@@ -76,15 +78,22 @@ export class RegisterPageComponent
     ).subscribe(() => this.validate());
   }
 
+  onCheckBoxChange(){
+    this.becomeBlogger = !this.becomeBlogger;
+  }
+
   public register(): void {
     this.userProvider.create(new UserModel({
       name: this.name.value,
       password: this.password.value,
-      username: this.email.value
-    })).pipe(mergeMap((user) => this.tokenProvider.login(
-      user.username,
-      this.password.value
-    ))).subscribe((tokens) => this.router.navigate([
+      username: this.email.value,
+      applyBlogger: this.becomeBlogger
+    })).pipe(
+      mergeMap((user) => this.tokenProvider.login(
+        user.username,
+        this.password.value
+      )),
+    ).subscribe((tokens) => this.router.navigate([
       '/',
       'admin',
       'account',

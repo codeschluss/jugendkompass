@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LabelModule } from '../../core';
 import { PartsModule } from '../parts/module';
@@ -20,6 +21,7 @@ import { EventComponent } from './event/event.component';
 import { EventsComponent } from './events/events.component';
 import { EventsListingComponent } from './events/events.listing';
 import { FavoritesListingComponent } from './favorites/favorites.listing';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { IndexComponent } from './index/index.component';
 import { PlaceComponent } from './place/place.component';
 import { PortalComponent } from './portal.component';
@@ -37,6 +39,7 @@ const components: Type<any>[] = [
   EventsComponent,
   EventsListingComponent,
   FavoritesListingComponent,
+  ForgotPasswordComponent,
   IndexComponent,
   PlaceComponent,
   PortalComponent,
@@ -49,6 +52,7 @@ const components: Type<any>[] = [
 
 const materials: Type<any>[] = [
   FontAwesomeModule,
+  FormsModule,
   LabelModule,
   MatButtonModule,
   MatCardModule,
@@ -60,6 +64,7 @@ const materials: Type<any>[] = [
   MatIconModule,
   MatInputModule,
   MatMenuModule,
+  MatSlideToggleModule,
   PartsModule,
   ReactiveFormsModule
 ];
